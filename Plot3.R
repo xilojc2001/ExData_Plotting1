@@ -3,7 +3,7 @@ DaysFeb <- MyTable[66637:69516,]  #I could not find how to filter by date so i f
 library(datasets)
 png("Plot3.png", width = 480, height = 480, units = "px", bg = "white")
 par(mar= c(4, 4, 2, 1))
-plot (DaysFeb$Sub_metering_1,Sub_metering_1,type = "l",xlab = "",ylab="Energy Sub Metering)",xaxt='n',col="black")
+plot (DaysFeb$Sub_metering_1,NULL,type = "l",xlab = "",ylab="Energy Sub Metering)",xaxt='n',col="black")
 lines (DaysFeb$Sub_metering_2,col="red")
 lines (DaysFeb$Sub_metering_3,col="blue")
 axis(1, at=c(0,1250,2500), lab=c("Thu","Fri","Sat"))
