@@ -1,0 +1,11 @@
+MyTable <- read.table ("household_power_consumption.txt", header = TRUE, sep=";", na.strings = "?")
+DaysFeb <- MyTable[66637:69516,]  #I could not find how to filter by date so i filter just like that
+library(datasets)
+png("Plot3.png", width = 480, height = 480, units = "px", bg = "white")
+par(mar= c(4, 4, 2, 1))
+plot (DaysFeb$Sub_metering_1,Sub_metering_1,type = "l",xlab = "",ylab="Energy Sub Metering)",xaxt='n',col="black")
+lines (DaysFeb$Sub_metering_2,col="red")
+lines (DaysFeb$Sub_metering_3,col="blue")
+axis(1, at=c(0,1250,2500), lab=c("Thu","Fri","Sat"))
+legend("topright", legend= c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), pch="-",lty = c(1,1))
+dev.off()
